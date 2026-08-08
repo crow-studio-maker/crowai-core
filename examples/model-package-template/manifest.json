@@ -1,0 +1,10 @@
+{
+  "id": "v0.1-dev",
+  "name": "Development Template",
+  "version": "0.1",
+  "description": "Non-functional callback and manifest template for CrowAI model developers.",
+  "display_order": 999,
+  "capabilities": ["conversation"],
+  "model_contract_version": 1,
+  "minimum_core_version": "4.2.0"
+}
