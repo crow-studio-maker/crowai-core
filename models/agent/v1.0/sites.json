@@ -1,0 +1,384 @@
+{
+  "version": 1,
+  "generic_parser_enabled": true,
+  "sites": [
+    {
+      "domain": "trendyol.com",
+      "name": "Trendyol",
+      "type": "marketplace",
+      "trust_base": 0.78,
+      "enabled": true,
+      "search_query_template": "site:trendyol.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "hepsiburada.com",
+      "name": "Hepsiburada",
+      "type": "marketplace",
+      "trust_base": 0.8,
+      "enabled": true,
+      "search_query_template": "site:hepsiburada.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "amazon.com.tr",
+      "name": "Amazon Türkiye",
+      "type": "marketplace",
+      "trust_base": 0.86,
+      "enabled": true,
+      "search_query_template": "site:amazon.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "n11.com",
+      "name": "N11",
+      "type": "marketplace",
+      "trust_base": 0.75,
+      "enabled": true,
+      "search_query_template": "site:n11.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "pazarama.com",
+      "name": "Pazarama",
+      "type": "marketplace",
+      "trust_base": 0.73,
+      "enabled": true,
+      "search_query_template": "site:pazarama.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "ciceksepeti.com",
+      "name": "ÇiçekSepeti",
+      "type": "marketplace",
+      "trust_base": 0.7,
+      "enabled": true,
+      "search_query_template": "site:ciceksepeti.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "teknosa.com",
+      "name": "Teknosa",
+      "type": "retailer",
+      "trust_base": 0.86,
+      "enabled": true,
+      "search_query_template": "site:teknosa.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "mediamarkt.com.tr",
+      "name": "MediaMarkt Türkiye",
+      "type": "retailer",
+      "trust_base": 0.86,
+      "enabled": true,
+      "search_query_template": "site:mediamarkt.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "vatanbilgisayar.com",
+      "name": "Vatan Bilgisayar",
+      "type": "retailer",
+      "trust_base": 0.86,
+      "enabled": true,
+      "search_query_template": "site:vatanbilgisayar.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "itopya.com",
+      "name": "İtopya",
+      "type": "retailer",
+      "trust_base": 0.82,
+      "enabled": true,
+      "search_query_template": "site:itopya.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "incehesap.com",
+      "name": "İncehesap",
+      "type": "retailer",
+      "trust_base": 0.82,
+      "enabled": true,
+      "search_query_template": "site:incehesap.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "akakce.com",
+      "name": "Akakçe",
+      "type": "price_comparison",
+      "trust_base": 0.77,
+      "enabled": true,
+      "search_query_template": "site:akakce.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "cimri.com",
+      "name": "Cimri",
+      "type": "price_comparison",
+      "trust_base": 0.76,
+      "enabled": true,
+      "search_query_template": "site:cimri.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "koctas.com.tr",
+      "name": "Koçtaş",
+      "type": "retailer",
+      "trust_base": 0.84,
+      "enabled": true,
+      "search_query_template": "site:koctas.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "boyner.com.tr",
+      "name": "Boyner",
+      "type": "retailer",
+      "trust_base": 0.82,
+      "enabled": true,
+      "search_query_template": "site:boyner.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "lcw.com",
+      "name": "LC Waikiki",
+      "type": "retailer",
+      "trust_base": 0.84,
+      "enabled": true,
+      "search_query_template": "site:lcw.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "defacto.com.tr",
+      "name": "DeFacto",
+      "type": "retailer",
+      "trust_base": 0.82,
+      "enabled": true,
+      "search_query_template": "site:defacto.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "migros.com.tr",
+      "name": "Migros",
+      "type": "retailer",
+      "trust_base": 0.85,
+      "enabled": true,
+      "search_query_template": "site:migros.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "carrefoursa.com",
+      "name": "CarrefourSA",
+      "type": "retailer",
+      "trust_base": 0.84,
+      "enabled": true,
+      "search_query_template": "site:carrefoursa.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "a101.com.tr",
+      "name": "A101",
+      "type": "retailer",
+      "trust_base": 0.76,
+      "enabled": true,
+      "search_query_template": "site:a101.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "bim.com.tr",
+      "name": "BİM",
+      "type": "retailer",
+      "trust_base": 0.76,
+      "enabled": true,
+      "search_query_template": "site:bim.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "sokmarket.com.tr",
+      "name": "ŞOK Market",
+      "type": "retailer",
+      "trust_base": 0.76,
+      "enabled": true,
+      "search_query_template": "site:sokmarket.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "gratis.com",
+      "name": "Gratis",
+      "type": "retailer",
+      "trust_base": 0.83,
+      "enabled": true,
+      "search_query_template": "site:gratis.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "watsons.com.tr",
+      "name": "Watsons Türkiye",
+      "type": "retailer",
+      "trust_base": 0.83,
+      "enabled": true,
+      "search_query_template": "site:watsons.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "ebebek.com",
+      "name": "ebebek",
+      "type": "retailer",
+      "trust_base": 0.84,
+      "enabled": true,
+      "search_query_template": "site:ebebek.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "idefix.com",
+      "name": "İdefix",
+      "type": "marketplace",
+      "trust_base": 0.75,
+      "enabled": true,
+      "search_query_template": "site:idefix.com {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    },
+    {
+      "domain": "dr.com.tr",
+      "name": "D&R",
+      "type": "retailer",
+      "trust_base": 0.84,
+      "enabled": true,
+      "search_query_template": "site:dr.com.tr {query}",
+      "preferred_data": [
+        "json_ld",
+        "open_graph",
+        "product_meta",
+        "visible_text"
+      ]
+    }
+  ]
+}

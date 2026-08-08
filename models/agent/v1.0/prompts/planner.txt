@@ -1,0 +1,47 @@
+Create a bounded, search-engine-friendly analysis plan from the supplied JSON.
+
+Return valid JSON only with this exact schema:
+
+{
+  "objective": "clear user objective",
+  "intent": "local_analysis | web_analysis | product_lookup | visual_analysis | visual_lookup | visual_product_lookup | document_analysis",
+  "depth": "quick | balanced | deep",
+  "queries": [
+    {
+      "query": "concise search query",
+      "purpose": "why this query is needed",
+      "priority": 0,
+      "kind": "web | product | image | news | document | review | manufacturer | marketplace | price_comparison",
+      "domains": [],
+      "recency_days": null
+    }
+  ],
+  "filters": {
+    "maximum_price": null,
+    "minimum_rating": null,
+    "official_store_only": false,
+    "available_only": true,
+    "currency": "TRY",
+    "country": "TR"
+  },
+  "comparison_criteria": [],
+  "needs_visual_analysis": false,
+  "needs_product_normalization": false,
+  "needs_current_information": false,
+  "expected_output": "answer",
+  "warnings": []
+}
+
+Planning requirements:
+- Do not request web access for a local file/image analysis unless the user asks for current, external, online, source-verification, price, stock, news, URL, or search information.
+- Search queries are not user-facing answers.
+- Each query must be concise, normally 4 to 14 words.
+- Never paste the entire user instruction into a search query.
+- Preserve exact product model, budget, variant, region and date constraints.
+- For commerce, separate official specifications, current offers, reviews and alternatives.
+- For a supplied URL, preserve it for direct inspection.
+- For uploaded documents, create external verification queries only when the user asks for verification/current information.
+- Avoid duplicate or near-duplicate queries.
+- Stay within maximum_queries and maximum_query_characters.
+- Do not answer the user's question.
+- Do not wrap JSON in Markdown.

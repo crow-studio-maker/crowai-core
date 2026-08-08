@@ -1,0 +1,15 @@
+{
+  "id": "v1.0",
+  "name": "V1.0",
+  "version": "1.0",
+  "description": "CrowAI local chat model.",
+  "capabilities": [
+    "conversation",
+    "attachments",
+    "language_matching",
+    "no_web"
+  ],
+  "model_contract_version": 1,
+  "minimum_core_version": "3.0.0",
+  "mode_state_schema_version": 2
+}

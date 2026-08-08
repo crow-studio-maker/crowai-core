@@ -1,0 +1,22 @@
+{
+  "id": "v1.0",
+  "name": "V1.0",
+  "version": "1.0",
+  "description": "Local multimodal document, visual, web and commerce agent with secure drag-and-drop attachments.",
+  "capabilities": [
+    "conversation",
+    "attachments",
+    "file_inspection",
+    "document_analysis",
+    "multimodal",
+    "vision",
+    "web_search",
+    "network",
+    "product_comparison",
+    "tools",
+    "language_matching"
+  ],
+  "model_contract_version": 1,
+  "minimum_core_version": "3.0.0",
+  "mode_state_schema_version": 2
+}

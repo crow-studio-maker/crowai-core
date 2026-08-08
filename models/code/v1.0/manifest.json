@@ -1,0 +1,28 @@
+{
+  "id": "v1.0",
+  "name": "V1.0",
+  "version": "1.0",
+  "description": "Local Qwen2.5-Coder software engineering package with project generation, review, editing, validation and repair.",
+  "capabilities": [
+    "conversation",
+    "attachments",
+    "file_inspection",
+    "code",
+    "tools",
+    "direct_code_generation",
+    "project_generation",
+    "project_memory",
+    "follow_up_editing",
+    "syntax_validation",
+    "repair_pass",
+    "multi_file",
+    "no_web",
+    "language_matching",
+    "structured_code_task",
+    "python_execution",
+    "isolated_python_runner"
+  ],
+  "model_contract_version": 1,
+  "minimum_core_version": "3.0.0",
+  "mode_state_schema_version": 2
+}

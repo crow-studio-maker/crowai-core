@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "core_search": {
+    "enabled": true,
+    "description": "CrowAI Core executes query_variations returned by prepare_request.",
+    "supports_web": true,
+    "supports_images": true,
+    "supports_news": true,
+    "supports_documents": true
+  },
+  "query_kinds": [
+    "web",
+    "product",
+    "image",
+    "news",
+    "document",
+    "review",
+    "manufacturer",
+    "marketplace",
+    "price_comparison"
+  ],
+  "provider_policy": {
+    "prefer_official_product_pages": true,
+    "prefer_structured_data": true,
+    "prefer_recent_prices": true,
+    "avoid_duplicate_domains": true,
+    "do_not_bypass_login_or_captcha": true,
+    "do_not_use_private_authenticated_pages": true
+  },
+  "optional_external_providers": {
+    "serper": {
+      "enabled": false,
+      "environment_key": "SERPER_API_KEY",
+      "endpoint": "https://google.serper.dev/search",
+      "request_timeout_seconds": 16
+    },
+    "brave": {
+      "enabled": false,
+      "environment_key": "BRAVE_SEARCH_API_KEY",
+      "endpoint": "https://api.search.brave.com/res/v1/web/search",
+      "request_timeout_seconds": 16
+    },
+    "bing": {
+      "enabled": false,
+      "environment_key": "BING_SEARCH_API_KEY",
+      "endpoint": "https://api.bing.microsoft.com/v7.0/search",
+      "request_timeout_seconds": 16
+    }
+  },
+  "fallback_search": {
+    "enabled": true,
+    "provider_order": [
+      "brave",
+      "serper",
+      "bing_api",
+      "duckduckgo_lite",
+      "bing_rss"
+    ],
+    "minimum_usable_sources": 5,
+    "notes": [
+      "API-backed providers are preferred when their environment keys exist.",
+      "DuckDuckGo Lite and Bing RSS are best-effort public fallbacks.",
+      "The agent does not bypass CAPTCHA, login, access controls, or robots policies."
+    ]
+  }
+}

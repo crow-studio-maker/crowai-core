@@ -1,0 +1,9 @@
+# CrowAI V1.0 direct runtime dependency baseline (pinned for repeatable installs).
+Flask==3.1.3
+waitress==3.0.2
+requests==2.32.5
+beautifulsoup4==4.14.3
+python-dotenv==1.2.2
+pypdf==5.9.0
+openpyxl==3.1.5
+PyMuPDF==1.26.7
