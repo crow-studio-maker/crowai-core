@@ -1,0 +1,21 @@
+      <section class="panel settings-panel" id="settingsPanel">
+        <header class="topbar"><div><span class="eyebrow">PREFERENCES</span><h1>Settings</h1></div></header>
+        <div class="settings-content">
+          <section class="settings-card">
+            <h2>Appearance</h2><p>Keep the interface calm and readable.</p>
+            <label>Theme<select id="appearance"><option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option></select></label>
+            <label class="switch-row"><span><strong>Compact sidebar</strong><small>Show more room for the conversation.</small></span><input type="checkbox" id="compactSidebar"></label>
+          </section>
+          <section class="settings-card">
+            <h2>Defaults</h2><p>Choose what is selected when a new conversation starts.</p>
+            <label>Language<select id="language"><option value="auto">Automatic</option><option value="tr">Türkçe</option><option value="en">English</option></select></label>
+            <label>Default model<select id="defaultModel"></select></label>
+          </section>
+          <section class="settings-card">
+            <h2>Privacy</h2><p>Data stays on this computer unless a selected model explicitly uses the network.</p>
+            <label class="switch-row"><span><strong>Save history</strong><small>Keep signed-in conversations on this device.</small></span><input type="checkbox" id="saveHistory" checked></label>
+            <button class="danger-button" id="clearData">Clear my local data</button>
+          </section>
+          <div class="settings-actions"><span id="settingsStatus"></span><button class="save-button" id="saveSettings">Save settings</button></div>
+        </div>
+      </section>

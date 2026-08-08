@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CrowAI</title>
+  <link rel="stylesheet" href="/static/workspace.css?v=20260806-4">
+  <script defer src="/static/workspace.js?v=20260806-4"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a class="brand" id="brandLink" href="/" aria-label="CrowAI home"><span class="brand-mark">C</span><span>CrowAI</span></a>
+      </div>
+      <nav class="nav-list" aria-label="Primary navigation">
+        <button class="nav-item active" data-panel="workspace" aria-current="page">◌ <span>Conversations</span></button>
+        <button class="nav-item" data-panel="settings">⚙ <span>Settings</span></button>
+      </nav>
+      <div class="section-label">Recent</div>
+      <div class="conversation-list" id="conversationList" aria-label="Recent conversations"></div>
+      <div class="sidebar-footer">
+        <button class="account-button" id="accountButton"><span class="avatar" id="accountAvatar">G</span><span class="account-copy"><strong id="accountName">Guest</strong><small id="accountHint">One question available</small></span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="panel active" id="workspacePanel">
+        <header class="topbar">
+          <div><span class="eyebrow" id="modelMode">LOCAL</span><h1 id="conversationTitle">New conversation</h1></div>
+        </header>
+        <div class="message-scroll" id="messageScroll">
+          <div class="welcome" id="welcome">
+            <div class="welcome-mark">C</div>
+            <h2 id="welcomeTitle">How can I help?</h2>
+            <p id="welcomeText">Select a local model, attach files when needed, and start with one clear request.</p>
+          </div>
+          <div class="messages" id="messages" aria-live="polite"></div>
+        </div>
+        <div class="composer-wrap">
+          <div class="guest-notice" id="guestNotice">Guest access includes one question. Sign in to continue and save history.</div>
+          <div class="attachment-tray" id="attachmentTray" hidden></div>
+          <p class="drop-hint">Choose files or drag and drop them into this area.</p>
+          <form class="composer" id="composer">
+            <textarea id="prompt" class="prompt-input" rows="1" maxlength="12000" placeholder="Type a message…" aria-label="Message" style="border:0!important;outline:0!important;box-shadow:none!important;-webkit-appearance:none!important;appearance:none!important;"></textarea>
+            <div class="composer-row">
+              <div class="composer-tools">
+                <input id="fileInput" type="file" multiple hidden>
+                <button type="button" class="round-button" id="fileButton" title="Attach files" aria-label="Attach files">＋</button>
+                <div class="model-picker" id="modelPicker">
+                  <button id="modelPickerTrigger" class="model-picker-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="modeMenu">
+                    <span class="model-picker-copy"><strong id="selectedModeName">No models installed</strong><small id="selectedModelName">Install a valid model package</small></span>
+                    <span class="model-picker-chevron" aria-hidden="true">⌃</span>
+                  </button>
+                  <div id="modeMenu" class="mode-menu" role="menu" aria-label="Model modes" hidden></div>
+                  <div id="modelSubmenu" class="model-submenu" role="menu" aria-label="Models" hidden></div>
+                </div>
+              </div>
+              <button class="send-button" id="sendButton" type="submit" aria-label="Send">↑</button>
+            </div>
+          </form>
+          <p class="fine-print">Local models may make mistakes. Verify important results.</p>
+        </div>
+      </section>
+
+      <section class="panel settings-panel" id="settingsPanel">
+        <header class="topbar"><div><span class="eyebrow">PREFERENCES</span><h1>Settings</h1></div></header>
+        <div class="settings-content">
+          <section class="settings-card">
+            <h2>Appearance</h2><p>Keep the interface calm and readable.</p>
+            <label>Theme<select id="appearance"><option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option></select></label>
+            <label class="switch-row"><span><strong>Compact sidebar</strong><small>Show more room for the conversation.</small></span><input type="checkbox" id="compactSidebar"></label>
+          </section>
+          <section class="settings-card">
+            <h2>Defaults</h2><p>Choose what is selected when a new conversation starts.</p>
+            <label>Language<select id="language"><option value="auto">Automatic</option><option value="tr">Türkçe</option><option value="en">English</option></select></label>
+            <label>Default model<select id="defaultModel"></select></label>
+          </section>
+          <section class="settings-card">
+            <h2>Privacy</h2><p>Data stays on this computer unless a selected model explicitly uses the network.</p>
+            <label class="switch-row"><span><strong>Save history</strong><small>Keep signed-in conversations on this device.</small></span><input type="checkbox" id="saveHistory" checked></label>
+            <button class="danger-button" id="clearData">Clear my local data</button>
+          </section>
+          <div class="settings-actions"><span id="settingsStatus"></span><button class="save-button" id="saveSettings">Save settings</button></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drop-overlay" id="dropOverlay" hidden><div>Drop files to attach</div></div>
+
+  <dialog id="authDialog" class="dialog">
+    <form method="dialog" class="dialog-card" id="authForm">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <div class="welcome-mark small">C</div>
+      <h2 id="authTitle">Sign in</h2>
+      <p id="authText">Continue conversations and keep local history.</p>
+      <label id="nameLabel" hidden>Username<input id="username" autocomplete="username" minlength="3" maxlength="32" pattern="[A-Za-z0-9_-]{3,32}"></label>
+      <label>Email<input id="email" type="email" autocomplete="email" required></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" minlength="10" required></label>
+      <div class="form-error" id="authError" aria-live="polite"></div>
+      <button class="save-button full" type="submit" id="authSubmit">Sign in</button>
+      <button class="link-button" type="button" id="authSwitch">Create an account</button>
+    </form>
+  </dialog>
+
+  <dialog id="conversationDialog" class="dialog">
+    <div class="dialog-card conversation-actions-card" role="document">
+      <button class="dialog-close" type="button" id="conversationDialogCancel" aria-label="Close">×</button>
+      <h2>Conversation actions</h2>
+      <p id="conversationDialogTitle" class="conversation-dialog-title"></p>
+      <div class="conversation-dialog-actions">
+        <button class="secondary-button" type="button" id="conversationRename">Rename</button>
+        <button class="danger-button" type="button" id="conversationDelete">Delete</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="confirmDialog" class="dialog">
+    <div class="dialog-card" role="document" aria-labelledby="confirmTitle" aria-describedby="confirmText">
+      <button class="dialog-close" type="button" id="confirmClose" aria-label="Close">×</button>
+      <h2 id="confirmTitle">Confirm action</h2>
+      <p id="confirmText"></p>
+      <div class="dialog-actions">
+        <button class="secondary-button" type="button" id="confirmCancel">Cancel</button>
+        <button class="save-button" type="button" id="confirmAccept">Confirm</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="renameDialog" class="dialog">
+    <form class="dialog-card" id="renameForm" novalidate>
+      <button class="dialog-close" type="button" id="renameClose" aria-label="Close">×</button>
+      <h2>Rename conversation</h2>
+      <p>Enter a clear name for this conversation.</p>
+      <label>Conversation name<input id="renameInput" maxlength="120" autocomplete="off" required></label>
+      <div class="form-error" id="renameError" aria-live="polite"></div>
+      <div class="dialog-actions">
+        <button class="secondary-button" type="button" id="renameCancel">Cancel</button>
+        <button class="save-button" type="submit" id="renameConfirm">Rename</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
